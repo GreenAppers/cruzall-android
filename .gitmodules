@@ -1,0 +1,3 @@
+[submodule "cruzall"]
+	path = cruzall
+	url = https://github.com/GreenAppers/cruzall

@@ -1,0 +1,73 @@
+os: linux
+language: android
+jdk: oraclejdk8
+
+licenses:
+  - android-sdk-preview-license-.+
+  - android-sdk-license-.+
+  - google-gdk-license-.+
+
+addons:
+  apt:
+    # Flutter dependencies
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++6
+      - fonts-droid
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-28.0.3
+    - build-tools-27.0.3
+    - android-27
+    - extra-android-m2repository
+    - extra-google-m2repository
+    - extra-google-android-support
+
+cache:
+  directories:
+  - vendor/bundle
+  - "$HOME/flutter/"
+
+before_install:
+  - echo $TRAVIS_OS_NAME
+  - echo ${HOME}
+  - echo ${TRAVIS_BUILD_DIR}
+  - yes | sdkmanager "platforms;android-27"
+  - yes | sdkmanager ndk-bundle
+  - gem install fastlane
+  - if [ ! -d "${HOME}/flutter/bin" ]; then rm -rf ${HOME}/flutter; git clone https://github.com/flutter/flutter.git -b stable --depth 1 ${HOME}/flutter; fi
+  - cd cruzall
+  - ${HOME}/flutter/bin/flutter doctor
+  - ${HOME}/flutter/bin/flutter packages get
+  - ${HOME}/flutter/bin/flutter packages pub run build_runner build
+  - cd cruzawl
+  - ${HOME}/flutter/bin/flutter packages get
+  - ${HOME}/flutter/bin/flutter packages pub run build_runner build
+  - cd ../..
+
+before_script:
+  - openssl aes-256-cbc -k $ENCRYPTION_PASSWORD -in travis-ci-apk-upload.json.enc -d -a -out travis-ci-apk-upload.json
+  - openssl aes-256-cbc -k $ENCRYPTION_PASSWORD -in cruzall/android/Cruzall_Distribution.keystore.enc -d -a -out cruzall/android/Cruzall_Distribution.keystore
+  - echo storePassword=$KEYSTORE_PASSWORD >> cruzall/android/key.properties
+  - echo keyPassword=$KEY_PASSWORD >> cruzall/android/key.properties
+
+script:
+  - cd cruzall
+  - ${HOME}/flutter/bin/flutter -v build apk --release
+  - cd ..
+  - md5sum cruzall/build/app/outputs/apk/release/app-release.apk
+  - fastlane submit_playalpha
+
+after_success:
+  - echo "success"
+
+after_failure:
+  - echo "failure"
+
+env:
+  global:
+  - TERM=dumb

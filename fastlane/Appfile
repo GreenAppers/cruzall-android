@@ -1,0 +1,2 @@
+json_key_file "travis-ci-apk-upload.json"
+package_name "com.greenappers.cruzall.android"
