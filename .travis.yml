@@ -42,7 +42,6 @@ before_install:
   - gem install fastlane
   - if [ ! -d "${HOME}/flutter/bin" ]; then rm -rf ${HOME}/flutter; git clone https://github.com/flutter/flutter.git -b stable --depth 1 ${HOME}/flutter; fi
   - cd cruzall
-  - ${HOME}/flutter/bin/flutter upgrade
   - ${HOME}/flutter/bin/flutter doctor
   - ${HOME}/flutter/bin/flutter packages get
   - ${HOME}/flutter/bin/flutter packages pub run build_runner build
