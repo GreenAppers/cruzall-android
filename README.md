@@ -4,3 +4,5 @@
 [![Build Status](https://travis-ci.org/GreenAppers/cruzall-android.svg?branch=master)](https://travis-ci.org/GreenAppers/cruzall-android)
 
 See [parent project](https://github.com/GreenAppers/cruzall)
+
+<img width=200 src="screenshot1.png" /> <img width=200 src="screenshot2.png" />
