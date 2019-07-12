@@ -28,11 +28,6 @@ android:
     - extra-google-m2repository
     - extra-google-android-support
 
-cache:
-  directories:
-  - vendor/bundle
-  - "$HOME/flutter/"
-
 before_install:
   - echo $TRAVIS_OS_NAME
   - echo ${HOME}
@@ -40,15 +35,11 @@ before_install:
   - yes | sdkmanager "platforms;android-27"
   - yes | sdkmanager ndk-bundle
   - gem install fastlane
-  - if [ ! -d "${HOME}/flutter/bin" ]; then rm -rf ${HOME}/flutter; git clone https://github.com/flutter/flutter.git -b stable --depth 1 ${HOME}/flutter; fi
+  - git clone https://github.com/flutter/flutter.git -b stable --depth 1 ${HOME}/flutter
   - cd cruzall
-  - ${HOME}/flutter/bin/flutter doctor
+  - ${HOME}/flutter/bin/flutter doctor -v
   - ${HOME}/flutter/bin/flutter packages get
-  - ${HOME}/flutter/bin/flutter packages pub run build_runner build
-  - cd cruzawl
-  - ${HOME}/flutter/bin/flutter packages get
-  - ${HOME}/flutter/bin/flutter packages pub run build_runner build
-  - cd ../..
+  - cd ..
 
 before_script:
   - openssl aes-256-cbc -k $ENCRYPTION_PASSWORD -in travis-ci-apk-upload.json.enc -d -a -out travis-ci-apk-upload.json
