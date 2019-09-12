@@ -7,3 +7,8 @@ lane :submit_playalpha do
   )
 
 end
+
+
+lane :screenshots do
+  upload_to_play_store
+end

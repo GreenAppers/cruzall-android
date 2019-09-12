@@ -1,6 +1,9 @@
-## Cruzall for Android 1.1.0 [![Build Status](https://travis-ci.org/GreenAppers/cruzall-android.svg?branch=master)](https://travis-ci.org/GreenAppers/cruzall-android)
-<img width=128 src="assets/cruzbit.png" /> <img src="assets/icon.png" /><br/>See [parent project](https://github.com/GreenAppers/cruzall)
-<br/><br/><img width=200 src="assets/en/screenshot1.png" /> <img width=200 src="assets/en/screenshot2.png" /> <img width=200 src="assets/en/screenshot3.png" />
+## Cruzall for Android 1.1.1 [![Build Status](https://travis-ci.org/GreenAppers/cruzall-android.svg?branch=master)](https://travis-ci.org/GreenAppers/cruzall-android)
+<img width=128 src="https://www.greenappers.com/cruzall/en/assets/cruzbit.png" /> <img width=128 src="https://www.greenappers.com/cruzall/en/assets/icon.png" />
+
+See [parent project](https://github.com/GreenAppers/cruzall)
+
+<img width=200 src="assets/en/screenshot1.png" /> <img width=200 src="assets/en/screenshot2.png" /> <img width=200 src="assets/en/screenshot3.png" />
 
 ## Build
 Follow the same procedure as [the continuous integration](https://github.com/GreenAppers/cruzall-android/blob/master/.travis.yml)
@@ -18,5 +21,5 @@ cruzall is released under the terms of the MIT license. See [LICENSE](https://gi
 
 ## Donations
 
-Right on!  [T83EkmIFNVJG+xK64Hm90GmQgrdR2V7BI=](https://www.cruzbase.com/#/address/RWEgB+NQs/T83EkmIFNVJG+xK64Hm90GmQgrdR2V7BI=)
+Right on!  [RWEgB+NQs/T83EkmIFNVJG+xK64Hm90GmQgrdR2V7BI=](https://www.cruzbase.com/#/address/RWEgB+NQs/T83EkmIFNVJG+xK64Hm90GmQgrdR2V7BI=)
 
