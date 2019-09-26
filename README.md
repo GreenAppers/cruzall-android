@@ -1,4 +1,4 @@
-## Cruzall for Android 1.1.1 [![Build Status](https://travis-ci.org/GreenAppers/cruzall-android.svg?branch=master)](https://travis-ci.org/GreenAppers/cruzall-android)
+## Cruzall for Android 1.1.2 [![Build Status](https://travis-ci.org/GreenAppers/cruzall-android.svg?branch=master)](https://travis-ci.org/GreenAppers/cruzall-android)
 <img width=128 src="https://www.greenappers.com/cruzall/en/assets/cruzbit.png" /> <img width=128 src="https://www.greenappers.com/cruzall/en/assets/icon.png" />
 
 See [parent project](https://github.com/GreenAppers/cruzall)
